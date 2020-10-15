@@ -1,0 +1,28 @@
+Icons
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/0DpPKFF/service1.png" alt="service1" border="0"></a>
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/LzzqBSj/service2.png" alt="service2" border="0"></a>
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/BnSpkd8/service3.png" alt="service3" border="0"></a>
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/TRYnwPX/service4.png" alt="service4" border="0"></a>
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/zbDRNnm/service5.png" alt="service5" border="0"></a>
+
+LOGOS
+
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/jHcHcHb/airbnb.png" alt="airbnb" border="0"></a>
+<a href="https://ibb.co/t2F7rj0"><img src="https://i.ibb.co/4S36rvb/Frame.png" alt="Frame" border="0"></a>
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/dk4zbZv/google.png" alt="google" border="0"></a>
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/GPkmCwG/logo.png" alt="logo" border="0"></a>
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/Sxh83bf/netflix.png" alt="netflix" border="0"></a>
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/SBNF9kx/slack.png" alt="slack" border="0"></a>
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/C1137xV/uber.png" alt="uber" border="0"></a>
+
+
+coustomer
+
+<a href="https://ibb.co/PGmD5pM"><img src="https://i.ibb.co/r27dZP3/carousel-1.png" alt="carousel-1" border="0"></a>
+<a href="https://ibb.co/YyhLBN6"><img src="https://i.ibb.co/qWprYDz/carousel-2.png" alt="carousel-2" border="0"></a>
+<a href="https://ibb.co/GxQq8ZF"><img src="https://i.ibb.co/Bz29Qhw/carousel-3.png" alt="carousel-3" border="0"></a>
+<a href="https://ibb.co/XJV3GKF"><img src="https://i.ibb.co/VB3QkzM/carousel-4.png" alt="carousel-4" border="0"></a>
+<a href="https://ibb.co/qrt7t60"><img src="https://i.ibb.co/yQwdw2h/carousel-5.png" alt="carousel-5" border="0"></a>
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/fHzYPf2/customer-1.png" alt="customer-1" border="0"></a>
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/bBm0QBw/customer-2.png" alt="customer-2" border="0"></a>
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/tHHyVrw/customer-3.png" alt="customer-3" border="0"></a>
