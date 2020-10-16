@@ -29,8 +29,7 @@ const Login = () => {
 
     const [loggedInUser, setloggedInUser] = useContext(UserContext);
     const history = useHistory();
-    const [admin, setAdmin] = useState()
-
+    const [admin, setAdmin] = useState({})
 
 
     useEffect(() => {
@@ -45,27 +44,6 @@ const Login = () => {
 
     }
         , [])
-        useEffect(() => {
-            fetch(`http://localhost:8080/admin?email=${loggedInUser.email}`)
-                .then(res => res.json())
-                .then(data => {
-                    console.log(data);
-                    if (data) {
-                        const newUser = { ...loggedInUser };
-                        newUser.setUser = true;
-                        setloggedInUser(newUser)
-                        history.push('/admin');
-                    }
-                 else {
-                        const newUser = { ...loggedInUser };
-                        newUser.setUser = false;
-                        setloggedInUser(newUser)
-                    history.push('/customer/:id')
-
-                    }
-                })
-        }, [])
-
 
 
 
@@ -78,10 +56,11 @@ const Login = () => {
     const handleGoogleSignIn = () => {
         firebase.auth().signInWithPopup(provider)
             .then(res => {
-                const { displayName, email } = res.user;
+                const { displayName, email, photoURL } = res.user;
                 const signedInUser = {
                     name: displayName,
-                    email: email
+                    email: email,
+                    userImg: photoURL
                 }
                 setloggedInUser(signedInUser);
                 storeAuthToken();
@@ -89,14 +68,11 @@ const Login = () => {
                 if (signedInUser.email === adminEmail) {
                     history.replace('/admin');
                 }
-                else{
-                    history.replace('/customer/:id')
+                else {
+                    history.replace('/customer')
                 }
             })
     }
-
-    // firebase.auth().signOut().then(function() {})
-    //   .catch(function(error) {});
 
 
     const storeAuthToken = () => {
@@ -109,15 +85,15 @@ const Login = () => {
 
     return (
         <div style={{}}>
-            <div style={{ textAlign: 'center', marginTop: '25px' }}>
+            <div style={{ textAlign: 'center', marginBottom: 70, marginTop: '25px' }}>
                 <img src="https://i.ibb.co/GPkmCwG/logo.png" alt="logo" border="0" style={{ height: "74px" }} />
             </div>
-            <div className="row" style={{ marginTop: 70 ,  border: '1px solid black', width: ''}}>
-            <div className="col-md-4 m-auto" style={style.container}>
-                <h2>Login With</h2>
-                <button onClick={handleGoogleSignIn} style={style.button} > <img style={{ height: '20px', width: '20px' }} src={'https://i.ibb.co/Jjt6XRw/google.png'} alt="Google" /> Continue with Google</button><br /><br />
-                <span>Don't have an account?<Link to=''>Create a new account</Link></span>
-            </div>
+            <div className="row" style={{ border: '1px solid black', borderRadius: '10px', width: '45%', margin: 'auto', padding: '25px' }}>
+                <div className="col-md-4 m-auto text-center" style={{ padding: "2%" }} >
+                    <h2>Login With</h2>
+                    <button onClick={handleGoogleSignIn} style={style.button} > <img style={{ height: '20px', width: '20px' }} src={'https://i.ibb.co/Jjt6XRw/google.png'} alt="Google" /> Continue with Google</button><br /><br />
+                    <span>Don't have an account?<Link to=''>Create a new account</Link></span>
+                </div>
             </div>
 
         </div>

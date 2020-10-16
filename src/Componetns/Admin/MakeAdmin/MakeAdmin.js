@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const MakeAdmin = () => {
 
     const handleAddAdmin = (e) => {
@@ -10,7 +11,7 @@ const MakeAdmin = () => {
             email: email
         }
 
-        fetch('http://localhost:8080/makeAdmin',{
+        fetch('https://afternoon-woodland-35533.herokuapp.com/makeAdmin',{
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(adminEmail)
@@ -22,6 +23,7 @@ const MakeAdmin = () => {
 
              alert('New Admin Added Successfully')
             }
+
     return (
         <div>
             <h3>Make Admin</h3>

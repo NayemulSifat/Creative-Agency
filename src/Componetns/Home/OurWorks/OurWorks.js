@@ -16,9 +16,11 @@ const OurWorks = () => {
             <Swiper
                 spaceBetween={80}
                 slidesPerView={2}
-                onSlideChange={() => console.log('slide change')}
-                onSwiper={(swiper) => console.log(swiper)}
-                Autoplay
+                loop={true}
+                autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false
+                }}
             >
                 <SwiperSlide><img src="https://i.ibb.co/r27dZP3/carousel-1.png" alt="carousel-1" border="0" style={{ height: "400px", width: "100%" }} /></SwiperSlide>
                 <SwiperSlide><img src="https://i.ibb.co/qWprYDz/carousel-2.png" alt="carousel-2" border="0" style={{ height: "400px", width: "100%" }} /></SwiperSlide>

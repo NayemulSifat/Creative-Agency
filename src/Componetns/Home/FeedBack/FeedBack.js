@@ -4,7 +4,7 @@ const FeedBack = () => {
     const [userReviews, setUserReviews] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:8080/userReview')
+        fetch('https://afternoon-woodland-35533.herokuapp.com/userReview')
             .then(res => res.json())
             .then(data =>  setUserReviews(data))
 

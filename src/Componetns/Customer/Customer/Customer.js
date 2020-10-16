@@ -21,19 +21,21 @@ const Customer = () => {
     return (
         <main>
             <div className="d-flex justify-content-between" style={{ marginLeft: 20, marginRight: 20, marginTop: 20 }}>
-                <img src="https://i.ibb.co/GPkmCwG/logo.png" href="/home" alt="logo" border="0" style={{ height: '35px' }} />
+                <Link to='/home'>
+                    <img src="https://i.ibb.co/GPkmCwG/logo.png" href="/home" alt="logo" border="0" style={{ height: '35px' }} />
+                </Link>
                 <span>{loggedInUser.name}</span>
             </div>
             <Router>
                 <div className="row" style={{ marginTop: "50px" }} >
                     <div className="col-md-3 col-sm-12 " style={{ marginLeft: "20px" }}>
-                        <div>
+                        <div style={{ padding: "10px" }}>
                             <Link to='/CustomerOrder'> <FontAwesomeIcon icon={faShoppingCart} /> Order</Link>
                         </div>
-                        <div>
+                        <div style={{ padding: "10px" }}>
                             <Link to='/ServiceList'> <FontAwesomeIcon icon={faThList} /> Service List</Link>
                         </div>
-                        <div>
+                        <div style={{ padding: "10px" }}>
                             <Link to='/Review'> <FontAwesomeIcon icon={faCommentAlt} /> Review </Link>
                         </div>
                     </div>

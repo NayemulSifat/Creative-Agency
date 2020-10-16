@@ -7,7 +7,7 @@ const CustomerService = () => {
 
     useEffect(() => {
 
-        fetch('http://localhost:8080/userService?email=' + loggedInUser.email, {
+        fetch('https://afternoon-woodland-35533.herokuapp.com/userService?email=' + loggedInUser.email, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -19,29 +19,29 @@ const CustomerService = () => {
                 setService(data)
             })
     }
-        , [])
+        , [loggedInUser.email])
 
     return (
         <div>
             <h2>Service</h2>
-           <div className="row">
-           {
-                service.map(service => <div key={service._id} className="card-deck col-md-5 col-sm-12 d-flex m-auto">
-                    <div className="card text-center" style={{ padding: "25px", marginTop:"20px" }}>
-                        <div className="d-flex justify-content-between">
-                            <img src={service.img} className="card-img-top " alt="..." style={{ height: "74px", width: "74px"}} />
-                            <span>
-                                <button>pending</button>
-                            </span>
+            <div className="row">
+                {
+                    service.map(service => <div key={service._id} className="card-deck col-md-5 col-sm-12 d-flex m-auto">
+                        <div className="card text-center" style={{ padding: "25px", marginTop: "20px" }}>
+                            <div className="d-flex justify-content-between">
+                                <img src={service.img} className="card-img-top " alt="..." style={{ height: "74px", width: "74px" }} />
+                                <span>
+                                    <button>pending</button>
+                                </span>
+                            </div>
+                            <div className="card-body">
+                                <h4>{service.orderName}</h4>
+                                <p className="card-text">{service.details}</p>
+                            </div>
                         </div>
-                        <div className="card-body">
-                            <h4>{service.orderName}</h4>
-                            <p className="card-text">{service.details}</p>
-                        </div>
-                    </div>
-                </div>)
-            }
-           </div>
+                    </div>)
+                }
+            </div>
         </div>
     );
 };

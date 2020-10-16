@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { UserContext } from '../../../App';
 
 const CustomerOrder = () => {
@@ -24,7 +24,7 @@ const CustomerOrder = () => {
         }
 
 
-        fetch('http://localhost:8080/addOrder', {
+        fetch('https://afternoon-woodland-35533.herokuapp.com/addOrder', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(newOrder)

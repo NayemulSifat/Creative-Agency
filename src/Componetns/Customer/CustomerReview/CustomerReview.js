@@ -6,6 +6,7 @@ const CustomerReview = () => {
     const [loggedInUser] = useContext(UserContext);
     
         const handleReview = (e) => {
+            e.preventDefault();
             const name = e.target.name.value;
             const companyname = e.target.companyname.value;
             const designation = e.target.designation.value;
@@ -21,7 +22,7 @@ const CustomerReview = () => {
             }
     
     
-            fetch('http://localhost:8080/addReview', {
+            fetch('https://afternoon-woodland-35533.herokuapp.com/addReview', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(newReview)
