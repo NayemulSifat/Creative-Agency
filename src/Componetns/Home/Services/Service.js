@@ -19,8 +19,8 @@ const Service = () => {
 
     const history = useHistory();
     
-    const handleService = () => {
-            history.push(`/customer`)
+    const handleService = (id) => {
+            history.push(`/dashBoard`)
             
     }
     
@@ -28,11 +28,17 @@ const Service = () => {
        <div style={{marginTop: "100px"}}>
             <div className="text-center">
             <h2>Provide awesome <span style={{color: "#7AB259"}}>services</span></h2>
-            <div className="row " style={{marginTop:"40px"}}>
+            <div className="row " style={{marginTop:"40px", margin: 'auto'}}>
+                 
+                 {
+                     allServices.length === 0  && <div className="col-md-12" style={{margin: 'auto'}}>
+                         <img src="https://wpamelia.com/wp-content/uploads/2018/11/ezgif-2-6d0b072c3d3f.gif" alt="Loading" />
+                     </div>
+                 }
                  {
                     allServices.map(
                         service =>
-                         <div key={service._id} className="card-deck col-md-4 col-sm-12 d-flex m-auto " onClick={handleService}>
+                         <div key={service._id} className="card-deck col-md-4 col-sm-12 d-flex m-auto " onClick={() => handleService(service._id)}>
                             <div className="card text-center service" style={{marginTop: "20px"}}>
                                 <img src={`data:image/png;base64,${service.image.img}`} className="card-img-top" alt="..." style={{ height: "74px", width: "74px", margin: "auto" }} />
                                 <div className="card-body">

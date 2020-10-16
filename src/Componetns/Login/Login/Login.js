@@ -1,5 +1,5 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import * as firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from "./firebaseConfig";
@@ -29,21 +29,9 @@ const Login = () => {
 
     const [loggedInUser, setloggedInUser] = useContext(UserContext);
     const history = useHistory();
-    const [admin, setAdmin] = useState({})
+    const location = useLocation();
+    const { from } = location.state || { from: {pathname: "/dashBoard"} };
 
-
-    useEffect(() => {
-        fetch('http://localhost:8080/findAdmin', {
-            method: 'GET',
-            headers: { 'Content-Type': 'application/json' },
-        })
-            .then(res => res.json())
-            .then(data => {
-                setAdmin(data)
-            });
-
-    }
-        , [])
 
 
 
@@ -56,29 +44,26 @@ const Login = () => {
     const handleGoogleSignIn = () => {
         firebase.auth().signInWithPopup(provider)
             .then(res => {
-                const { displayName, email, photoURL } = res.user;
+                const { displayName, email } = res.user;
                 const signedInUser = {
                     name: displayName,
-                    email: email,
-                    userImg: photoURL
+                    email: email
                 }
                 setloggedInUser(signedInUser);
                 storeAuthToken();
-                const adminEmail = admin[0].email;
-                if (signedInUser.email === adminEmail) {
-                    history.replace('/admin');
-                }
-                else {
-                    history.replace('/customer')
-                }
             })
+            .catch(function (error) {
+                const errorMessage = error.message;
+                console.log(errorMessage);
+              });
     }
 
 
     const storeAuthToken = () => {
         firebase.auth().currentUser.getIdToken(true)
             .then(function (idToken) {
-                sessionStorage.setItem('token', idToken)
+                sessionStorage.setItem('token', idToken);
+                history.replace(from)
             }).catch(function (error) {
             });
     }

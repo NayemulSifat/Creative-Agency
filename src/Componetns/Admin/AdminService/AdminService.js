@@ -26,6 +26,7 @@ const AdminService = () => {
     return (
         <div>
             <h2>Service List</h2>
+
             <table style={{ width: "100%", backgroundColor: "white", borderRadius: "15px" }}>
                 <thead>
                     <tr style={{ borderRadius: "10px", backgroundColor: "#E5E5E5", marginTop: "10px" }}>
@@ -36,6 +37,13 @@ const AdminService = () => {
                         <th style={{ padding: "15px" }}>Status</th>
                     </tr>
                 </thead>
+                {
+                    allOrder.length === 0 && <div className="row">
+                        <div className="col-md-12" style={{ margin: 'auto' }}>
+                            <img src="https://wpamelia.com/wp-content/uploads/2018/11/ezgif-2-6d0b072c3d3f.gif" alt="Loading" />
+                        </div>
+                    </div>
+                }
                 {
                     allOrder.map(service => <tbody key={service._id}>
                         <tr >

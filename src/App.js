@@ -6,11 +6,11 @@ import {
   Route
 } from "react-router-dom";
 import Home from './Componetns/Home/Home/Home';
-import Customer from './Componetns/Customer/Customer/Customer';
-import Admin from './Componetns/Admin/Admin/Admin';
 import Login from './Componetns/Login/Login/Login';
 import PrivateRoute from './Componetns/Login/PrivateRoute/PrivateRoute';
 import Error from './Componetns/Error/Error';
+import Dashboard from './Componetns/Dashboard/Dashboard';
+
 export const UserContext = createContext();
 
 function App() {
@@ -24,11 +24,8 @@ function App() {
             <Route path='/home'>
               <Home />
             </Route>
-            <PrivateRoute path='/customer'>
-              <Customer />
-            </PrivateRoute>
-            <PrivateRoute path='/admin'>
-              <Admin />
+            <PrivateRoute path='/dashBoard'>
+              <Dashboard />
             </PrivateRoute>
             <Route path='/login'>
               <Login />
